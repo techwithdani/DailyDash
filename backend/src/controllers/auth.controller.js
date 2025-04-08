@@ -59,3 +59,8 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid Email or Password");
   }
 });
+
+module.exports = {
+  registerUser,
+  loginUser,
+};

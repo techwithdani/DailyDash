@@ -5,6 +5,7 @@ const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
+const authRoutes = require("./routes/auth.route");
 
 const PORT = process.env.PORT;
 
@@ -12,6 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+app.use("/api/auth", authRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
