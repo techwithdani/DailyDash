@@ -19,14 +19,13 @@ const userSchema = new mongoose.Schema(
       unique: true,
       match: [/.+@.+\..+/, "Please fill a valid email address"],
     },
-    dateOfBirth: {
-      type: Date,
-      required: [true, "Date of birth required"],
-    },
     password: {
       type: String,
       required: [true, "Password required"],
       minLength: [8, "Password must be at least 8 characters long"],
+    },
+    dateOfBirth: {
+      type: Date,
     },
     profilePicture: {
       type: String,
