@@ -25,12 +25,6 @@ const userSchema = new mongoose.Schema(
       required: [true, "Password required"],
       minLength: [8, "Password must be at least 8 characters long"],
     },
-    dateOfBirth: {
-      type: Date,
-    },
-    profilePicture: {
-      type: String,
-    },
   },
   { timestamps: true }
 );
