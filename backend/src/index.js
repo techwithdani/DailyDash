@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const dbConnection = require("./configs/dbConnection");
+const dbConnection = require("./db/dbConnection");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
 const authRoutes = require("./routes/auth.route");
 
