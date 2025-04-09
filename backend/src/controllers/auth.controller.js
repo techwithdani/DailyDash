@@ -13,14 +13,11 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("User Already Exists");
   }
 
-  const salt = await bcrypt.genSalt(12);
-  const hashedPassword = await bcrypt.hash(password, salt);
-
   const newUser = await User.create({
     fullName,
     userName,
     email,
-    hashedPassword,
+    password,
   });
 
   if (newUser) {
