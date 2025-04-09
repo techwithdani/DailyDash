@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const dbConnection = require("./configs/dbConnection");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
 const authRoutes = require("./routes/auth.route");
 
@@ -20,5 +21,6 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`Server started at port: ${PORT}`);
+  console.log(`Server started at port: http://localhost:${process.env.PORT}`);
+  dbConnection();
 });
