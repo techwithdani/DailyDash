@@ -39,3 +39,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     throw new Error("User Not Found");
   }
 });
+
+module.exports = {
+  getUserProfile,
+  updateUserProfile,
+};

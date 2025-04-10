@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const dbConnection = require("./db/dbConnection");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
 const authRoutes = require("./routes/auth.route");
+const userRoutes = require("./routes/user.route");
 
 const PORT = process.env.PORT;
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/user", userRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
